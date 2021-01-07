@@ -1,9 +1,9 @@
 class Square {
   private double side;
-  final MAX_SIDE_LENGTH = 10;
+  public final int MAX_SIDE_LENGTH = 10;
 
-  public square() {
-    side;
+  public Square(double theSide) {
+    side = theSide;
   }
 
   double getSide() {
@@ -11,10 +11,21 @@ class Square {
   }
 
   void setSide(double theSide) {
-    side = theSide;
+    if (theSide <= MAX_SIDE_LENGTH && theSide >= 0) {
+      side = theSide;
+    }
+    
   }
 
-  String toString() {
-    return "Square with side length: " + side;
+  public String toString() {
+    return "Square with side length = " + this.side;
+  }
+
+  double area() {
+    return this.side*this.side;
+  }
+
+  double diagonal() {
+    return Math.sqrt((this.side*this.side)+(this.side*this.side));
   }
 }
